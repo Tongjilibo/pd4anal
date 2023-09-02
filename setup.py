@@ -8,7 +8,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 setup(
     name='pd4anal',
     version='v0.0.1',
-    description='an elegant pd4nanl',
+    description='an elegant pd4anal',
     long_description=long_description,
     long_description_content_type="text/markdown",
     license='MIT Licence',

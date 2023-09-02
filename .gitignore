@@ -1,2 +1,4 @@
 .DS_Store
 .vscode
+dist
+pd4anal.egg-info
