@@ -1,9 +1,7 @@
 # 绘图功能区域
-import seaborn as sns
 import math
 import warnings
 from collections import OrderedDict
-import matplotlib.pyplot as plt
 from pylab import mpl
 import numpy as np
 import pandas as pd
@@ -11,6 +9,11 @@ import os
 import traceback
 from ..data.schema import schemacenter
 from .base import LineChartPercentBase
+from pd4anal.utils import safe_import
+with safe_import():
+	import seaborn as sns
+with safe_import():
+    import matplotlib.pyplot as plt
 
 
 class LineChartPercentKde(LineChartPercentBase):

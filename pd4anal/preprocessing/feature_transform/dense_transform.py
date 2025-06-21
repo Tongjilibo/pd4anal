@@ -1,7 +1,9 @@
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
 import warnings
 from pandas.core.common import SettingWithCopyWarning
 warnings.simplefilter(action='ignore', category=SettingWithCopyWarning)
+from pd4anal.utils import safe_import
+with safe_import():
+    from sklearn.preprocessing import StandardScaler, MinMaxScaler
 
 
 class DenseTransform(object):

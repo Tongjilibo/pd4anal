@@ -1,4 +1,7 @@
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from pd4anal.utils import safe_import
+with safe_import():
+    from sklearn.preprocessing import StandardScaler, MinMaxScaler
+
 
 class DefaultTransform(object):
     def __init__(self, name='default_preprocess', default_encode='raw', feature_list=[], specific_encode={}, **params):

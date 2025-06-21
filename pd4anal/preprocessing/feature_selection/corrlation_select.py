@@ -1,6 +1,8 @@
-from sklearn.preprocessing import LabelEncoder
 import numpy as np
 from collections import OrderedDict
+from pd4anal.utils import safe_import
+with safe_import():
+    from sklearn.preprocessing import LabelEncoder
 
 
 class CorrlationFeatureSelect(object):

@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+from pd4anal.utils import safe_import
+with safe_import():
+    import matplotlib.pyplot as plt
 
 class SankeyOne(object):
     def __init__(self, labels, figsize=(10,8), name='sankey_one', title='', save_path=None, pipeline_return=False, 

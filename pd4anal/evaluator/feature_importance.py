@@ -3,10 +3,12 @@ import numpy as np
 from collections import OrderedDict
 import pandas as pd
 import json
-import matplotlib.pyplot as plt
 import os
 from tqdm import tqdm
 import copy
+from pd4anal.utils import safe_import
+with safe_import():
+    import matplotlib.pyplot as plt
 
 
 def get_importance(fea_cols, importances, use_abs=True):

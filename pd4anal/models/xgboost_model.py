@@ -1,10 +1,15 @@
-import xgboost
 from .base import Model
 import numpy as np
 from collections import OrderedDict
 from ..evaluator.feature_importance import TreeFeatureImportance, TreeShapFeatureImportance
+from pd4anal.utils import is_package_available
+if is_package_available('xgboost'):
+	from xgboost import XGBClassifier as xgboost_XGBClassifier
+else:
+    class xgboost_XGBClassifier: pass
 
-class XGBClassifier(xgboost.XGBClassifier, Model):
+
+class XGBClassifier(xgboost_XGBClassifier, Model):
     def feature_importance(self, X, y, method='tree', save_path=None, **params):
         if method == 'tree':
             importance_ = TreeFeatureImportance(**params)

@@ -1,8 +1,6 @@
-import seaborn as sns
 import math
 import warnings
 from collections import OrderedDict
-import matplotlib.pyplot as plt
 from pylab import mpl
 import numpy as np
 import pandas as pd
@@ -11,7 +9,13 @@ import traceback
 from ..data.schema import schemacenter
 import re
 import copy
-from pd4anal.utils import is_dtype_numberic
+from pd4anal.utils import is_dtype_numberic, safe_import
+with safe_import():
+	import seaborn as sns
+from pd4anal.utils import safe_import
+with safe_import():
+    import matplotlib.pyplot as plt
+
 
 class VisualBase(object):
     def __init__(self, save_path=None, sparse_list=[], dense_list=[], feature_importance={}, bin_count=10, bins=None, bin_cutmode='qcut', bin_replace_inf=True,

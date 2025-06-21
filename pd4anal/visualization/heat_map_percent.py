@@ -1,14 +1,16 @@
 # 绘图功能区域
-import seaborn as sns
 import math
 import warnings
 from collections import OrderedDict
-import matplotlib.pyplot as plt
 from pylab import mpl
 import numpy as np
 import pandas as pd
 import os
-from pd4anal.utils import is_dtype_numberic
+from pd4anal.utils import is_dtype_numberic, safe_import
+with safe_import():
+	import seaborn as sns
+with safe_import():
+    import matplotlib.pyplot as plt
 
 
 class HeatMapPercent(object):

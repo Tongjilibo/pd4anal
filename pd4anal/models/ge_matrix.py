@@ -1,11 +1,13 @@
 import os
 import pandas as pd
-import seaborn as sns
 import copy
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib
-
+from pd4anal.utils import safe_import
+with safe_import():
+	import seaborn as sns
+with safe_import():
+    import matplotlib.pyplot as plt
+    import matplotlib
 
 class GeMatrix(object):
     def __init__(self, index, columns, save_path='', index_bins=None, columns_bins=None, sparse_fea_sort={}, dense_bin_count=10, 

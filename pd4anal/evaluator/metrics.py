@@ -1,8 +1,10 @@
 from collections import defaultdict
-from sklearn.metrics import f1_score, roc_auc_score, mean_squared_error, mean_absolute_error
 import numpy as np
 import os
 import json
+from pd4anal.utils import safe_import
+with safe_import():
+    from sklearn.metrics import f1_score, roc_auc_score, mean_squared_error, mean_absolute_error
 
 
 def safe_calculate(func, *args, default_value=0, **kwargs):

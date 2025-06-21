@@ -1,5 +1,8 @@
 # 数据拆分
-from sklearn.model_selection import StratifiedKFold, StratifiedShuffleSplit, train_test_split
+from pd4anal.utils import safe_import
+with safe_import():
+    from sklearn.model_selection import StratifiedKFold, StratifiedShuffleSplit, train_test_split
+
 
 class DataSplit(object):
     def __init__(self, name='data_split', method='train_test_split', split_options={'test_size': 0.2}, return_dataframe=False, **kwargs):
